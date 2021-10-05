@@ -1,0 +1,135 @@
+#calculator-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#calculator {
+    width: 400px;
+    height: 80%;
+    outline: black 1px solid;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 5fr;
+    background: black;
+}
+
+#result-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: rgb(68, 68, 68);
+}
+
+#result-display {
+    width: 90%;
+    height: 45%;
+    display: flex;
+    align-items: center;
+    background: white;
+    margin: auto;
+}
+
+#result {
+    font-size: 2em;
+    margin-left: 1rem;
+}
+
+#numpad {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.num {
+    width: 65%;
+    height: 70%; 
+    margin: auto;
+    display: grid;
+    background: rgb(209, 130, 11);
+    border-radius: 15px;
+}
+
+.input {
+    width: 65%;
+    height: 70%; 
+    margin: auto;
+    display: grid;
+    background: rgb(209, 130, 11);
+    border-radius: 15px;
+}
+
+.input:hover {
+    opacity: 80%;
+}
+
+.input p {
+    margin: auto;
+    font-size: 2em;
+}
+
+#operatorpad {
+    height: 100%;
+    width: 92%;
+    margin: auto;
+    grid-column: 1/3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.operator {
+    width: 65%;
+    height: 70%; 
+    margin: auto;
+    display: grid;
+    background: rgb(255, 251, 244);
+    border-radius: 10px;
+}
+
+.operator:hover {
+    opacity: 80%;
+}
+
+.operator p {
+    margin: auto;
+    font-size: 1.5em;
+}
+
+#clear {
+    width: 65%;
+    height: 70%; 
+    margin: auto;
+    display: grid;
+    background: rgb(255, 251, 244);
+    border-radius: 10px;
+}
+
+#clear:hover {
+    opacity: 80%;
+}
+
+#clear p {
+    margin: auto;
+    font-size: 1.5em;
+}
+
+#enter {
+    width: 65%;
+    height: 70%; 
+    margin: auto;
+    display: grid;
+    background: rgb(209, 130, 11);
+    border-radius: 15px;
+}
+
+#enter:hover {
+    opacity: 60%;
+}
+
+#enter p {
+    margin: auto;
+    font-size: 3em; 
+}
