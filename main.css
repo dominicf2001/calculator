@@ -8,18 +8,23 @@
 #calculator {
     width: 400px;
     height: 80%;
-    outline: black 1px solid;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 2fr 5fr;
     background: black;
+    border: gray 10px solid;
+    border-radius: 20px;
 }
 
 #result-container {
-    width: 100%;
+    width: 95%;
+    height: 80%;
+    margin: auto;
     display: flex;
     align-items: center;
     background: rgb(68, 68, 68);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
 
 #result-display {
@@ -32,8 +37,15 @@
 }
 
 #result {
+    font-size: 3em;
+    margin-left: auto;
+    margin-right: .5rem;
+}
+
+#operator {
     font-size: 2em;
-    margin-left: 1rem;
+    opacity: 75%;
+    margin-left: .5rem;
 }
 
 #numpad {
@@ -53,8 +65,8 @@
 }
 
 .input {
-    width: 65%;
-    height: 70%; 
+    width: 85%;
+    height: 90%; 
     margin: auto;
     display: grid;
     background: rgb(209, 130, 11);
@@ -67,7 +79,7 @@
 
 .input p {
     margin: auto;
-    font-size: 2em;
+    font-size: 3em;
 }
 
 #operatorpad {
@@ -103,7 +115,7 @@
     height: 70%; 
     margin: auto;
     display: grid;
-    background: rgb(255, 251, 244);
+    background: rgb(97, 95, 93);
     border-radius: 10px;
 }
 
@@ -112,6 +124,24 @@
 }
 
 #clear p {
+    margin: auto;
+    font-size: 1.5em;
+}
+
+#percent {
+    width: 65%;
+    height: 70%; 
+    margin: auto;
+    display: grid;
+    background: rgb(97, 95, 93);
+    border-radius: 10px;
+}
+
+#percent:hover {
+    opacity: 80%;
+}
+
+#percent p {
     margin: auto;
     font-size: 1.5em;
 }
