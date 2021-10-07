@@ -17,10 +17,10 @@ function divide(a, b) {
 }
 
 function operate(operator, a, b) { 
-    if (operator == '+') return roundtoXdecimals(add(a,b), 10);
-    if (operator == '-') return roundtoXdecimals(subtract(a,b), 10);
-    if (operator == '*') return roundtoXdecimals(multiply(a,b), 10);
-    if (operator == '/') return roundtoXdecimals(divide(a,b), 10);
+    if (operator == '+') return roundtoXdecimals(add(a,b), 8);
+    if (operator == '-') return roundtoXdecimals(subtract(a,b), 8);
+    if (operator == '*') return roundtoXdecimals(multiply(a,b), 8);
+    if (operator == '/') return roundtoXdecimals(divide(a,b), 8);
 }
 
 function roundtoXdecimals(n, places) {
@@ -108,6 +108,7 @@ const enter = document.querySelector('#enter');
 const percent = document.querySelector('#percent');
 const decimal = document.querySelector('#decimal');
 const operatorDisplay = document.querySelector('#operator');
+const sign = document.querySelector('#sign');
 
 // global variables
 
@@ -120,7 +121,8 @@ let isDecimal = false;
 // DOM manipulation
 
 function display(input) {
-    if (result.textContent == '0' || resultSignal == true) {
+    if (result.textContent == '0' || resultSignal == true || result.textContent == '-0') {
+        
         result.textContent = '';
         resultSignal = false;
     }
@@ -141,6 +143,7 @@ function initalizeNextIteration(operator) {
 
 function oper(operator) {
     operatorDisplay.textContent = operator;
+    isDecimal = false;
     if (operandA == null) {
         operandA = result.textContent;
         resultSignal = true;
@@ -186,7 +189,7 @@ enter.addEventListener('click', () => {
 
 percent.addEventListener('click', () => {
     let percentage = String(roundtoXdecimals(result.textContent * (1 / 100), 100));
-    
+
     if (percentage.includes('e')) {
         percentage = processPercentageWithE(percentage);
         result.textContent = percentage;
@@ -197,4 +200,9 @@ percent.addEventListener('click', () => {
     }
 })
 
+sign.addEventListener('click', () => {
+    if (resultSignal) return;
+    if (result.textContent[0] != '-') result.textContent = '-'.concat(result.textContent);
+    else result.textContent = result.textContent.replace('-', '');
+})
 
